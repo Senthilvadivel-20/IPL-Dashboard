@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+
+        <link rel="stylesheet" href="{% static 'ipl/css/team_enter.css'%}">
+        <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://kit.fontawesome.com/09e39528d8.js" crossorigin="anonymous"></script>
+        <link href="http://fonts.cdnfonts.com/css/jimmysbold" rel="stylesheet">
+
+    <title>Team</title>
+
+</head>
+
+
+<body >
+
+
+    <!-- -------------------------Nav Start---------------------------------- -->
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+    <ul>
+    <li><a href="/">Home</a></li>
+    <li><a target="_blank" href="https://senthilvadivel-20.github.io/Portfolio/">About Us</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Feedback</a></li>
+    
+    <li><p> Developed By Senthil </p></li>
+    
+    <div class="social_media">
+        <a target="_blank" href="https://github.com/Senthilvadivel-20" class="fa fa-github"></a>
+        <a target="_blank" href="https://www.linkedin.com/in/senthilsubramaniyam20/" class="fa fa-linkedin"></a>
+        <a target="_blank" href="https://twitter.com/the_senthil_" class="fa fa-twitter"></a>
+        <a target="_blank" href="https://www.instagram.com/the_senthil_/" class="fa fa-instagram"></a>
+    </div>
+    
+    </ul>
+    </div>
+
+    <!-- ----------------------------Nav End----------------------------- -->
+
+
+    <div class="content">
+  
+    <form action="team_home" >
+
+        <h1>Search the team</h1>
+
+        <label>Enter Team name: </label>
+        <input list="team_list" type="text" required name="team_name" id="team_name" placeholder="ex: chennai super kings" >
+
+        <datalist id="team_list">
+            <option value="Royal Challengers Bangalore">
+                <option value="Kings XI Punjab">
+                <option value="Delhi Daredevils">
+                <option value="Mumbai Indians">
+                <option value="Kolkata Knight Riders">
+                <option value="Rajasthan Royals">
+                <option value="Deccan Chargers">
+                <option value="Chennai Super Kings">
+                <option value="Kochi Tuskers Kerala">
+                <option value="Pune Warriors">
+                <option value="Sunrisers Hyderabad">
+                <option value="Gujarat Lions">
+                <option value="Rising Pune Supergiants">
+                <option value="Delhi Capitals">
+                <option value="Punjab Kings">
+        </datalist>
+        <br>
+        <input class="button" type="submit" value="Submit" >
+    </form>
+
+</div>
+
+</body>

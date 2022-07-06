@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+
+<head>
+    <title>{{name}} Home</title>
+    <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+    <!-- <link rel="stylesheet" href="{% static 'ipl/css/table.css'%}"> -->
+</head>
+
+<style>
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th {
+  background-color: #5ce2e2;
+}
+td {
+    width: 50px;
+    height: 25px;   
+    text-align: center;
+    background-color: #b1f1f1;
+}
+</style>
+
+<body>
+
+    <h1>
+        The {{name}}'s' runs against teams
+    </h1>
+
+    <table>
+
+    <tr>
+        <th>Year</th>
+        <th>Match</th>
+        <th>Runs </th>
+        <th>Runs of bat </th>
+        <th>Extra runs</th>
+        <th> Wicket </th>
+        <th>Dot</th>
+        <th>one</th>
+        <th>Two</th>
+        <th>Three</th>
+        <th>Four</th>
+        <th>Five</th>
+        <th>Six</th>
+    </tr>
+    <tr>
+        <td>{{ batting_total.0 }}</td>
+        <td>{{ batting_total.1 }}</td>
+        <td>{{ batting_total.2 }}</td>
+        <td>{{ batting_total.3 }}</td>
+        <td>{{ batting_total.4 }}</td>
+        <td>{{ batting_total.5 }}</td>
+        <td>{{ batting_total.6 }}</td>
+        <td>{{ batting_total.7 }}</td>
+        <td>{{ batting_total.8 }}</td>
+        <td>{{ batting_total.9 }}</td>
+        <td>{{ batting_total.10 }}</td>
+        <td>{{ batting_total.11 }}</td>
+        <td>{{ batting_total.12 }}</td>
+    </tr>
+
+    {% for data in ssn_bat_list %}
+
+    <tr>
+
+        <td>{{ data.0 }}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.3 }}</td>
+        <td>{{ data.4 }}</td>
+        <td>{{ data.5 }}</td>
+        <td>{{ data.6 }}</td>
+        <td>{{ data.7 }}</td>
+        <td>{{ data.8 }}</td>
+        <td>{{ data.9 }}</td>
+        <td>{{ data.10 }}</td>
+        <td>{{ data.11 }}</td>
+        <td>{{ data.12 }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+        
+    </table>
+
+    <h1>
+        The {{name}}'s' bowling statistics
+    </h1>
+
+    <table>
+
+        <thead>
+            <th>Year</th>
+            <th>Matchs</th>
+            <th>Runs</th>
+            <th>Runs of Bat</th>
+            <th>Extra</th>
+            <th>Wickets</th>
+            <th>Bowled Wicket</th>
+            <th>Cought</th>
+            <th>Cought and bowl</th>
+            <th>Hit wicket</th>
+            <th>lbw</th>
+            <th>obstructing the field </th>
+            <th>retired hurt</th>
+            <th>Runs out</th>
+            <th>Stumbed</th>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>{{ bowling_total.0 }}</td>
+                <td>{{ bowling_total.1 }}</td>
+                <td>{{ bowling_total.2 }}</td>
+                <td>{{ bowling_total.3 }}</td>
+                <td>{{ bowling_total.4 }}</td>
+                <td>{{ bowling_total.5 }}</td>
+                <td>{{ bowling_total.6 }}</td>
+                <td>{{ bowling_total.7 }}</td>
+                <td>{{ bowling_total.8 }}</td>
+                <td>{{ bowling_total.9 }}</td>
+                <td>{{ bowling_total.10 }}</td>
+                <td>{{ bowling_total.11 }}</td>
+                <td>{{ bowling_total.12 }}</td>
+                <td>{{ bowling_total.13 }}</td>
+                <td>{{ bowling_total.14 }}</td>
+                
+
+            </tr>
+
+            {% for i in ssn_bowl_list %}
+
+            <tr>
+                <td>{{ i.0 }}</td>
+                <td>{{ i.1 }}</td>
+                <td>{{ i.2 }}</td>
+                <td>{{ i.3 }}</td>
+                <td>{{ i.4 }}</td>
+                <td>{{ i.5 }}</td>
+                <td>{{ i.6 }}</td>
+                <td>{{ i.7 }}</td>
+                <td>{{ i.8 }}</td>
+                <td>{{ i.9 }}</td>
+                <td>{{ i.10 }}</td>
+                <td>{{ i.11 }}</td>
+                <td>{{ i.12 }}</td>
+                <td>{{ i.13 }}</td>
+                <td>{{ i.14 }}</td>
+          
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+    
+    
+</body>

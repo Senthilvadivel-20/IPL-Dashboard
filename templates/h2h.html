@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Head to Head</title>
+</head>
+
+<style>
+    body{
+    /* margin-top: 200px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+
+<body>
+
+    <h1>{{t1}} vs {{t2}}</h1>
+
+    <table>
+
+        <tr>
+            <th></th>
+            <th>{{t1}}</th>
+            <th>{{t2}}</th>
+        </tr>
+
+        <tr>
+            <th>Win</th>
+            <td>{{team_1_win}}</td>
+            <td>{{team_2_win}}</td>
+        </tr>
+
+        <tr>
+            <th>Lose</th>
+            <td>{{team_2_win}}</td>
+            <td>{{team_1_win}}</td>
+        </tr>        
+
+        <tr>
+            <th>Tie</th>
+            <td>{{tie}}</td>
+            <td>{{tie}}</td>
+        </tr>
+
+        <tr>
+            <th>High Score</th>
+            <td>{{team_1_hs}}</td>
+            <td>{{team_2_hs}}</td>
+        </tr>
+
+        <tr>
+            <th>Low Score</th>
+            <td>{{team_1_ls}}</td>
+            <td>{{team_2_ls}}</td>
+        </tr>
+
+        <tr>
+            <th>See the target Chart</th>
+            <td><a href="h2h/{{team_1_url}}">{{t1}} targets </a></td>
+            <td><a href="h2h/{{team_2_url}}">{{t2}} targets </a></td>
+        </tr>
+
+    </table>
+
+</body>
+
+
+
+</html>

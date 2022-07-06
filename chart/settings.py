@@ -11,10 +11,10 @@ SECRET_KEY = 'django-insecure-kl1%gpdeguds+5^cgaufy+a-evth&rm32o8vrq@u1v4u))wv^r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'dashboard-for-ipl.herokuapp.com/']
 
-WHITENOISE_USE_FINDERS = True
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# WHITENOISE_USE_FINDERS = True
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Application definition
 
@@ -24,10 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    # 'django.contrib.staticfiles',
-    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
     'chart'
-
 ]
 
 MIDDLEWARE = [
@@ -111,12 +109,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-   
-# ]
-
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

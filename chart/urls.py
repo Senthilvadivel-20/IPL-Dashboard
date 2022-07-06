@@ -6,6 +6,9 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
+from django.views.static import serve
+from django.urls import re_path as url
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name="Home"),
@@ -37,7 +40,9 @@ urlpatterns = [
 
     #Score prediction
     path('score_prediction_home',views.score_prediction_home,name="score_prediction_home"),
-    path('score_prediction_result',views.score_prediction, name = "score_prediction_result")
+    path('score_prediction_result',views.score_prediction, name = "score_prediction_result"),
+
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})
 
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

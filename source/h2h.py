@@ -1,7 +1,8 @@
 import pandas as pd
+import numpy as np
 
-df = pd.read_csv('D:/PROJECT/IPL Dashboard/Data/IPL.csv')
-dt=pd.read_json('D:/PROJECT/IPL Dashboard/Data/Match.json')
+df = pd.read_csv('./Files/IPL.csv',dtype={'season':np.object})
+dt=pd.read_json('./Files/Match.json')
 dt['season']= dt['season'].astype(str)
 
 

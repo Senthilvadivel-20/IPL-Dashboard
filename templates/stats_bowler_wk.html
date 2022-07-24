@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+
+<head>
+    <title>{{name}} Home</title>
+    <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+    <link rel="stylesheet" href="{% static 'ipl/css/stats_overall_batsman_high_score.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/09e39528d8.js" crossorigin="anonymous"></script>
+    <link href="http://fonts.cdnfonts.com/css/jimmysbold" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <!-- -------------------------Nav Start---------------------------------- -->
+
+ <input type="checkbox" id="active">
+ <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+ <div class="wrapper">
+ <ul>
+ <li><a href="/">Home</a></li>
+ <li><a target="_blank" href="https://senthilvadivel-20.github.io/Portfolio/">About Us</a></li>
+ <li><a href="#">Services</a></li>
+ <li><a href="#">Gallery</a></li>
+ <li><a href="#">Feedback</a></li>
+ 
+ <li><p> Developed By Senthil </p></li>
+ 
+ <div class="social_media">
+     <a target="_blank" href="https://github.com/Senthilvadivel-20" class="fa fa-github"></a>
+     <a target="_blank" href="https://www.linkedin.com/in/senthilsubramaniyam20/" class="fa fa-linkedin"></a>
+     <a target="_blank" href="https://twitter.com/the_senthil_" class="fa fa-twitter"></a>
+     <a target="_blank" href="https://www.instagram.com/the_senthil_/" class="fa fa-instagram"></a>
+ </div>
+ 
+ </ul>
+ </div>
+ 
+ <!-- ----------------------------Nav End----------------------------- -->
+
+    <h1>
+        Bowler Perfomance
+    </h1>
+
+    <form action="stats_season_bowler_wk">
+
+        <label>Enter Season: </label>
+        <select name="season" id="season">
+
+            <option value="2007/08">2007/08</option>
+            <option value="2009">2009</option>
+            <option value="2009/10">2009/10</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2020/21">2020/21</option>
+            <option value="2021">2021</option>
+
+
+        </select>
+
+        <input class="button" type="submit" value="Submit">
+
+    </form>
+
+    <table>
+
+    <tr>
+        <th>Season</th>
+        <th>Date</th>
+        <th>Venue</th>
+        <th>Batting Team</th>
+        <th>Bowling Team</th>
+        <th>Bowling Hand</th>
+        <th>Bowler</th>
+        <th>wicket</th>
+        <th>Balls Bowled</th>
+        <th>Overs</th>
+        <th>Runs</th>
+        <th>Six</th>
+        <th>Four</th>
+        <th>Dot</th>
+    </tr>
+
+    {% for data in lis %}
+
+    <tr>
+
+        <td>{{ data.0 }}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.3 }}</td>
+        <td>{{ data.4 }}</td>
+        <td>{{ data.5 }}</td>
+        <td><a href="player/{{data.6}}">{{ data.6 }}</a></td>
+        <td>{{ data.7 }}</td>
+        <td>{{ data.8 }}</td>
+        <td>{{ data.9 }}</td>
+        <td>{{ data.10 }}</td>
+        <td>{{ data.11 }}</td>
+        <td>{{ data.12 }}</td>
+        <td>{{ data.13 }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+        
+    </table>
+    
+    
+</body>

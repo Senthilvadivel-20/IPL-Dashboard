@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+
+<head>
+    <title>{{name}} Home</title>
+    <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+    <link rel="stylesheet" href="{% static 'ipl/css/table.css'%}">
+    <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/09e39528d8.js" crossorigin="anonymous"></script>
+    <link href="http://fonts.cdnfonts.com/css/jimmysbold" rel="stylesheet">
+</head>
+
+
+
+<body>
+
+ <!-- -------------------------Nav Start---------------------------------- -->
+
+ <input type="checkbox" id="active">
+ <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+ <div class="wrapper">
+ <ul>
+ <li><a href="/">Home</a></li>
+ <li><a target="_blank" href="https://senthilvadivel-20.github.io/Portfolio/">About Us</a></li>
+ <li><a href="#">Services</a></li>
+ <li><a href="#">Gallery</a></li>
+ <li><a href="#">Feedback</a></li>
+ 
+ <li><p> Developed By Senthil </p></li>
+ 
+ <div class="social_media">
+     <a target="_blank" href="https://github.com/Senthilvadivel-20" class="fa fa-github"></a>
+     <a target="_blank" href="https://www.linkedin.com/in/senthilsubramaniyam20/" class="fa fa-linkedin"></a>
+     <a target="_blank" href="https://twitter.com/the_senthil_" class="fa fa-twitter"></a>
+     <a target="_blank" href="https://www.instagram.com/the_senthil_/" class="fa fa-instagram"></a>
+ </div>
+ 
+ </ul>
+ </div>
+ 
+ <!-- ----------------------------Nav End----------------------------- -->
+ 
+
+
+    <h1>
+        The {{name}}'s' runs against teams
+    </h1>
+
+    <table>
+
+    <tr>
+        <th>Year</th>
+        <th>Total Match</th>
+        <th>Batted Match</th>
+        <th>out</th>
+        <th>Total runs</th>
+        <th>High Score</th>
+        <th>Ball faced</th>
+        <th>Average</th>
+        <th>Strike rate</th>
+        <th>100+</th>
+        <th>50+</th>
+        <th>30+</th>
+        <th>6</th>
+        <th>5</th>
+        <th>4</th>
+        <th>3</th>
+        <th>2</th>
+        <th>1</th>
+        <th>0</th>
+    </tr>
+    <tr>
+        
+        <td>Over all</td>
+        <td>{{ total.0 }}</td>
+        <td>{{ total.1 }}</td>
+        <td>{{ total.2 }}</td>
+        <td>{{ total.3 }}</td>
+        <td>{{ total.4 }}</td>
+        <td>{{ total.5 }}</td>
+        <td>{{ total.6 }}</td>
+        <td>{{ total.7 }}</td>
+        <td>{{ total.8 }}</td>
+        <td>{{ total.9 }}</td>
+        <td>{{ total.10 }}</td>
+        <td>{{ total.11 }}</td>
+        <td>{{ total.12 }}</td>
+        <td>{{ total.13 }}</td>
+        <td>{{ total.14 }}</td>
+        <td>{{ total.15 }}</td>
+        <td>{{ total.16 }}</td>
+        <td>{{ total.17 }}</td>
+        
+    </tr>
+
+    {% for data in ssn_list %}
+
+    <tr>
+
+        <td>{{ data.0 }}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.3 }}</td>
+        <td>{{ data.4 }}</td>
+        <td>{{ data.5 }}</td>
+        <td>{{ data.6 }}</td>
+        <td>{{ data.7 }}</td>
+        <td>{{ data.8 }}</td>
+        <td>{{ data.9 }}</td>
+        <td>{{ data.10 }}</td>
+        <td>{{ data.11 }}</td>
+        <td>{{ data.12 }}</td>
+        <td>{{ data.13 }}</td>
+        <td>{{ data.14 }}</td>
+        <td>{{ data.15 }}</td>
+        <td>{{ data.16 }}</td>
+        <td>{{ data.17 }}</td>
+        <td>{{ data.18 }}</td>
+
+    </tr>
+
+    {% endfor %}
+
+        
+    </table>
+
+    <h1>
+        The {{name}}'s' bowling statistics
+    </h1>
+
+    <table>
+
+        <thead>
+            <th>Year</th>
+            <th>No.of.Match</th>
+            <th>Bowled match</th>
+            <th>Balls</th>
+            <th>Runs</th>
+            <th>Wickets</th>
+            <th>BBM</th>
+            <th>Average</th>
+            <th>Economy</th>
+            <th>Strike Rate</th>
+            <th>6</th>
+            <th>4</th>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Over all</td>
+                <td>{{ ttl.0 }}</td>
+                <td>{{ ttl.1 }}</td>
+                <td>{{ ttl.2 }}</td>
+                <td>{{ ttl.3 }}</td>
+                <td>{{ ttl.4 }}</td>
+                <td>{{ ttl.5 }}</td>
+                <td>{{ ttl.6 }}</td>
+                <td>{{ ttl.7 }}</td>
+                <td>{{ ttl.8 }}</td>
+                <td>{{ ttl.9 }}</td>
+                <td>{{ ttl.10 }}</td>
+                
+
+            </tr>
+
+            {% for i in ssn_bowl_list %}
+
+            <tr>
+                <td>{{ i.0 }}</td>
+                <td>{{ i.1 }}</td>
+                <td>{{ i.2 }}</td>
+                <td>{{ i.3 }}</td>
+                <td>{{ i.4 }}</td>
+                <td>{{ i.5 }}</td>
+                <td>{{ i.6 }}</td>
+                <td>{{ i.7 }}</td>
+                <td>{{ i.8 }}</td>
+                <td>{{ i.9 }}</td>
+                <td>{{ i.10 }}</td>
+                <td>{{ i.11 }}</td>
+            
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+    
+    
+</body>

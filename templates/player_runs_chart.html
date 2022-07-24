@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+    <head>
+		<title>{{name}} Home</title>
+		<link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+	</head>
+
+	<style>
+
+		body{
+			background: rgb(211, 218, 224);
+		}
+
+		</style>
+
+
+    <body style="height: 100%; margin: 0">
+
+        <h1>
+            The {{name}}'s' runs against teams
+        </h1>
+
+        <div id="container" style="height: 100%"></div>
+
+		<h1>Seasonal runs of {{name}}</h1>
+
+		<div id="container1" style="height: 100%"></div>
+
+
+        
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+		
+<script type="text/javascript">
+	
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			var app = {};
+
+			var option;
+
+
+			option = {
+			//   tooltip: {
+			// 	trigger: 'axis',
+			// 	axisPointer: {
+			// 	  type: 'shadow'
+			// 	}
+			//   },
+			tooltip: {
+		trigger: 'axis'
+		},
+			legend: {},
+			toolbox: {
+			show: true,
+			feature: {
+			dataZoom: {
+			yAxisIndex: 'none'
+		},
+			dataView: { readOnly: false },
+			magicType: { type: ['line', 'bar'] },
+			restore: {},
+			saveAsImage: {}
+		}
+		},
+			  grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '3%',
+				containLabel: true
+			  },
+			  xAxis: [
+				{
+				  type: 'category',
+				  data: [{% for data in bat_labels %} '{{ data}}', {% endfor %}],
+				  axisTick: {
+					alignWithLabel: true
+				  }
+				}
+			  ],
+			  yAxis: [
+				{
+				  type: 'value'
+				}
+			  ],
+			  series: [
+				{
+				  name: 'Runs',
+				  type: 'bar',
+				  barWidth: '60%',
+				  data: [{% for data in bat_values %} '{{ data}}', {% endfor %}]
+				}
+			  ]
+			};
+
+			if (option && typeof option === 'object') {
+				myChart.setOption(option);
+			}
+
+        </script>
+
+
+        
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+       
+<script type="text/javascript">
+		var dom1 = document.getElementById("container1");
+		var myChart1 = echarts.init(dom1);
+		var app1 = {};
+
+		var option1;
+
+
+
+		option1 = {
+		title: {
+		text: 'Runs Scored by Season'
+		},
+		tooltip: {
+		trigger: 'axis'
+		},
+			legend: {},
+			toolbox: {
+			show: true,
+			feature: {
+			dataZoom: {
+			yAxisIndex: 'none'
+		},
+			dataView: { readOnly: false },
+			magicType: { type: ['line', 'bar'] },
+			restore: {},
+			saveAsImage: {}
+		}
+		},
+			xAxis: {
+			type: 'category',
+			boundaryGap: false,
+			data: [{% for data in ssn_labels %} '{{ data}}', {% endfor %}]
+		},
+			yAxis: {
+			type: 'value',
+			axisLabel: {
+			formatter: '{value}'
+		}
+		},
+			series: [
+		{
+			name: 'Runs',
+			type: 'line',
+			data: {{ssn_values}},
+			markPoint: {
+			data: [
+				{ type: 'max', name: 'Max' },
+				{ type: 'min', name: 'Min' }
+	]
+	},
+		markLine: {
+		data: [{ type: 'average', name: 'Avg' }]
+	}
+	}
+	]
+	};
+
+	if (option1 && typeof option1 === 'object') {
+	myChart1.setOption(option1);
+}
+
+</script>
+
+<!-- Seasonal Run -->
+
+	<!-- <script type="text/javascript">
+		var dom1 = document.getElementById("container1");
+		var myChart1 = echarts.init(dom1);
+		var app1 = {};
+
+		var option1;
+
+
+
+		option1 = {
+		xAxis: {
+			type: 'category',
+			data: [{% for data in ssn_labels %} '{{ data}}', {% endfor %}]
+		},
+		yAxis: {
+			type: 'value'
+		},
+		tooltip: {
+			trigger: 'axis'
+		},
+		series: [
+			{
+			data: {{ssn_values}},
+			type: 'line',
+			symbol: 'triangle',
+			symbolSize: 20,
+			lineStyle: {
+				color: '#5470C6',
+				width: 4,
+				type: 'dashed'
+			},
+			itemStyle: {
+				borderWidth: 3,
+				borderColor: '#EE6666',
+				color: 'yellow'
+			}
+			}
+		]
+		};
+
+		if (option1 && typeof option1 === 'object') {
+			myChart1.setOption(option1);
+		}
+
+	</script> -->
+
+    </body>
+</html>
+

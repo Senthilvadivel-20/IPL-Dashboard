@@ -1,0 +1,693 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+        <link rel="stylesheet" href="{% static 'ipl/css/player_home.css'%}">
+        <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/09e39528d8.js" crossorigin="anonymous"></script>
+        <link href="http://fonts.cdnfonts.com/css/jimmysbold" rel="stylesheet">
+
+        <title>
+            Home Page
+        </title>
+    </head>
+
+    <style>
+
+        body{
+            background-size: cover;
+        }
+
+        </style>
+
+    <body background="{% static 'ipl/image/player.jpg' %}">
+
+            <!-- -------------------------Nav Start---------------------------------- -->
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a target="_blank" href="https://senthilvadivel-20.github.io/Portfolio/">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Feedback</a></li>
+
+        <li><p> Developed By Senthil </p></li>
+        
+        <div class="social_media">
+            <a target="_blank" href="https://github.com/Senthilvadivel-20" class="fa fa-github"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/senthilsubramaniyam20/" class="fa fa-linkedin"></a>
+            <a target="_blank" href="https://twitter.com/the_senthil_" class="fa fa-twitter"></a>
+            <a target="_blank" href="https://www.instagram.com/the_senthil_/" class="fa fa-instagram"></a>
+        </div>
+
+    </ul>
+</div>
+    
+    <!-- ----------------------------Nav End----------------------------- -->
+
+    <div class="content">
+
+        <h1>
+            Player's Batting and Bowling Statistics
+        </h1>
+
+        <br>
+
+        <form action="player_feature" method="POST">
+            {% csrf_token %}
+            <label>Enter Player Name: </label><br>
+            <div class="player_name">
+                <input list="player_names" name="Name" id="Name" required>
+            </div>
+                <datalist id="player_names">
+                    <option value="AB de Villiers">
+                    <option value="KL Rahul">
+                    <option value="Aakash Chopra">
+                    <option value="Aaron Finch">
+                    <option value="Aavishkar Salvi">
+                    <option value="Ab McDonald">
+                    <option value="Abdul Samad">
+                    <option value="Abdur Razzak">
+                    <option value="Abhimanyu Mithun">
+                    <option value="Abhinav Mukund">
+                    <option value="Abhishek Jhunjhunwala">
+                    <option value="Abhishek Nayar">
+                    <option value="Abhishek Raut">
+                    <option value="Abhishek Sharma">
+                    <option value="Abrar Kazi">
+                    <option value="Abu Nechim">
+                    <option value="Adam Gilchrist">
+                    <option value="Adam Milne">
+                    <option value="Adam Voges">
+                    <option value="Adam Zampa">
+                    <option value="Adil Rashid">
+                    <option value="Aditya Dole">
+                    <option value="Aditya Tare">
+                    <option value="Adrian Barath">
+                    <option value="Aiden Craig Blizzard">
+                    <option value="Aiden Markram">
+                    <option value="Ajantha Mendis">
+                    <option value="Ajinkya Rahane">
+                    <option value="Ajit Agarkar">
+                    <option value="Ajit Chandila">
+                    <option value="Akash Singh">
+                    <option value="Akila Dananjaya">
+                    <option value="Akshdeep Deependra Nath">
+                    <option value="Albie Morkel">
+                    <option value="Alex Carey ">
+                    <option value="Alex Hales">
+                    <option value="Alfonso Clive Thomas">
+                    <option value="Ali Murtaza ">
+                    <option value="Alzarri Joseph">
+                    <option value="Ambati Rayudu">
+                    <option value="Amit Mishra">
+                    <option value="Amit Paunikar">
+                    <option value="Amit Uniyal">
+                    <option value="Anand Rajan">
+                    <option value="Andre Russell">
+                    <option value="Andrew Flintoff">
+                    <option value="Andrew Symonds">
+                    <option value="Andrew Tye">
+                    <option value="André Nel">
+                    <option value="Angelo Mathews">
+                    <option value="Aniket Choudhary">
+                    <option value="Anil Kumble">
+                    <option value="Anirudha Singh">
+                    <option value="Anirudha Srikkanth">
+                    <option value="Ankeet Chavan">
+                    <option value="Ankit Bawne">
+                    <option value="Ankit Rajpoot">
+                    <option value="Ankit Sharma">
+                    <option value="Ankit Soni">
+                    <option value="Anmolpreet Singh">
+                    <option value="Anrich Nortje">
+                    <option value="Anuj Rawat">
+                    <option value="Anukul Sudhakar Roy">
+                    <option value="Anureet Singh">
+                    <option value="Anustup Prabir Majumdar">
+                    <option value="Arindam N Ghosh">
+                    <option value="Arshdeep Singh">
+                    <option value="Arun Karthik">
+                    <option value="Asad Ullah Khan Pathan">
+                    <option value="Ashish Nehra">
+                    <option value="Ashish R. Shukla">
+                    <option value="Ashish Reddy">
+                    <option value="Ashish Yadav">
+                    <option value="Ashley Noffke">
+                    <option value="Ashok Dinda">
+                    <option value="Ashok Menaria">
+                    <option value="Ashton James Turner">
+                    <option value="Avesh Khan">
+                    <option value="Axar Patel ">
+                    <option value="Azhar Bilakhia ">
+                    <option value="Azhar Mahmood">
+                    <option value="Balachandra Akhil">
+                    <option value="Barinder Sran">
+                    <option value="Basil Thampi">
+                    <option value="Ben Dunk">
+                    <option value="Ben Laughlin">
+                    <option value="Ben Rohrer">
+                    <option value="Ben Stokes">
+                    <option value="Benjamin Colin James Cutting ">
+                    <option value="Benjamin William Hilfenhaus">
+                    <option value="Beuran Hendricks">
+                    <option value="Bharat Chipli">
+                    <option value="Bhargav Bhatt">
+                    <option value="Bhuvneshwar Kumar">
+                    <option value="Billy Stanlake">
+                    <option value="Biplab Samantray">
+                    <option value="Bipul Sharma">
+                    <option value="Bodapati Sumanth">
+                    <option value="Brad Haddin">
+                    <option value="Brad Hodge">
+                    <option value="Brad Hogg">
+                    <option value="Brendon McCullum">
+                    <option value="Brett Geeves">
+                    <option value="Brett Lee">
+                    <option value="Cameron White">
+                    <option value="Carlos Brathwaite">
+                    <option value="Chamara Kapugedera">
+                    <option value="Chamara Silva">
+                    <option value="Chaminda Vaas">
+                    <option value="Chandan Madan">
+                    <option value="Chandrasekar Ganapathy">
+                    <option value="Charl Langeveldt">
+                    <option value="Chetan Sakariya">
+                    <option value="Cheteshwar Pujara">
+                    <option value="Chetnya Nanda">
+                    <option value="Chidhambaram Muralidharen Gautam">
+                    <option value="Chris Gayle">
+                    <option value="Chris Green">
+                    <option value="Chris Jordan">
+                    <option value="Chris Lynn">
+                    <option value="Chris Woakes">
+                    <option value="Christopher Ferguson">
+                    <option value="Clearfil SE Bond ">
+                    <option value="Clint McKay">
+                    <option value="Colin Ingram">
+                    <option value="Colin Munro">
+                    <option value="Colin de Grandhomme">
+                    <option value="Corey James Anderson ">
+                    <option value="D'Arcy John Matthew Short ">
+                    <option value="Dale Steyn">
+                    <option value="Damien Martyn">
+                    <option value="Dan Christian">
+                    <option value="Daniel Harris">
+                    <option value="Daniel Sams">
+                    <option value="Daniel Vettori">
+                    <option value="Daren Sammy">
+                    <option value="Darren Bravo">
+                    <option value="Darren Lehmann">
+                    <option value="David Andrew Miller">
+                    <option value="David Hussey">
+                    <option value="David Jacobs">
+                    <option value="David Warner">
+                    <option value="David Wiese">
+                    <option value="David Willey">
+                    <option value="Dawid Malan">
+                    <option value="Debabrata Das">
+                    <option value="Deepak Chahar">
+                    <option value="Deepak Hooda">
+                    <option value="Devdutt Padikkal">
+                    <option value="Devraj Thyagaraj Patil ">
+                    <option value="Dhawal Kulkarni">
+                    <option value="Dhruv Shorey">
+                    <option value="Dilhara Fernando">
+                    <option value="Dillon du Preez�">
+                    <option value="Dimitri Mascarenhas">
+                    <option value="Dinesh Karthik">
+                    <option value="Dinesh Salunkhe">
+                    <option value="Dirk Nannes">
+                    <option value="Dishant Yagnik">
+                    <option value="Doddapaneni Kalyankrishna">
+                    <option value="Dominic Thornely">
+                    <option value="Domnic Joseph">
+                    <option value="Doug Bollinger">
+                    <option value="Doug Bracewell">
+                    <option value="Dr. Manubhai M. Patel">
+                    <option value="Dr. Zachary Smith">
+                    <option value="Dwaraka Ravi Teja">
+                    <option value="Dwayne Bravo">
+                    <option value="Eklavya Dwivedi">
+                    <option value="Eoin Morgan">
+                    <option value="Evin Lewis">
+                    <option value="Fabian Allen">
+                    <option value="Faf du Plessis">
+                    <option value="Faiz Fazal">
+                    <option value="Farhaan Behardien">
+                    <option value="Farveez Maharoof">
+                    <option value="Fidel Edwards">
+                    <option value="Gagandeep Singh">
+                    <option value="Gautam Gambhir">
+                    <option value="George Bailey">
+                    <option value="George Garton">
+                    <option value="Glenn Maxwell">
+                    <option value="Glenn McGrath">
+                    <option value="Glenn Phillips">
+                    <option value="Gnaneshwara Rao">
+                    <option value="Graeme Smith">
+                    <option value="Graham Napier">
+                    <option value="Gurinder Singh Sandhu">
+                    <option value="Gurkeerat Singh">
+                    <option value="Halhadar Das">
+                    <option value="Hanuma Vihari">
+                    <option value="Harbhajan Singh">
+                    <option value="Hardik Pandya">
+                    <option value="Hardus Viljoen">
+                    <option value="Harmeet Meet">
+                    <option value="Harmeet Singh">
+                    <option value="Harpreet Brar">
+                    <option value="Harpreet Singh Bhatia">
+                    <option value="Harry Gurney">
+                    <option value="Harshal Patel">
+                    <option value="Hashim Amla">
+                    <option value="Heinrich Klaasen">
+                    <option value="Herschelle Gibbs">
+                    <option value="Imran Tahir">
+                    <option value="Iqbal Abdulla">
+                    <option value="Irfan Pathan">
+                    <option value="Ish Sodhi">
+                    <option value="Ishan Kishan">
+                    <option value="Ishan Malhotra">
+                    <option value="Ishan Porel">
+                    <option value="Ishank Jaggi">
+                    <option value="Ishant Sharma">
+                    <option value="Ishwar Pandey">
+                    <option value="Isuru Udana">
+                    <option value="J. D. Ryder">
+                    <option value="Jacob Oram">
+                    <option value="Jacques Kallis">
+                    <option value="Jagadeesh Arunkumar">
+                    <option value="Jagadeesha Suchith">
+                    <option value="Jalaj Sahai Saxena">
+                    <option value="Jamaluddin Syed Mohammad">
+                    <option value="James Faulkner ">
+                    <option value="James Franklin">
+                    <option value="James Hopes">
+                    <option value="James Neesham">
+                    <option value="James Pattinson">
+                    <option value="Jaskaran Singh">
+                    <option value="Jason Behrendorff">
+                    <option value="Jason Holder">
+                    <option value="Jason Roy">
+                    <option value="Jasprit Bumrah">
+                    <option value="Javon Searles">
+                    <option value="Jayant Yadav">
+                    <option value="Jaydev Unadkat">
+                    <option value="Jean-Paul Duminy">
+                    <option value="Jeevan Mendis">
+                    <option value="Jerome Everton Taylor">
+                    <option value="Jhye Richardson">
+                    <option value="Joe Denly">
+                    <option value="Jofra Chioke Archer">
+                    <option value="Joginder Sharma">
+                    <option value="Johan Botha">
+                    <option value="Johannes Jacobus van der Wath">
+                    <option value="John Woodland Hastings">
+                    <option value="Jonny Bairstow">
+                    <option value="Jos Buttler">
+                    <option value="Josh Hazlewood">
+                    <option value="Josh Philippe">
+                    <option value="Junior Dala">
+                    <option value="Justin Kemp">
+                    <option value="KM Asif">
+                    <option value="Kagiso Rabada">
+                    <option value="Kamlesh Nagarkoti">
+                    <option value="Kamran Akmal">
+                    <option value="Kamran Khan">
+                    <option value="Kane Richardson">
+                    <option value="Kane Williamson">
+                    <option value="Karan Goel">
+                    <option value="Karanveer Singh">
+                    <option value="Karn Vinod Sharma ">
+                    <option value="Kartik Tyagi">
+                    <option value="Karun Kaladharan Nair">
+                    <option value="Kedar Jadhav">
+                    <option value="Keemo Paul">
+                    <option value="Kemar Roach">
+                    <option value="Kevin Pietersen">
+                    <option value="Kevon Cooper">
+                    <option value="Khaleel Ahmed">
+                    <option value="Kieron Pollard">
+                    <option value="Konganda Charamanna Cariappa">
+                    <option value="Kotarangada Prabhu Appanna">
+                    <option value="Krishmar Santokie">
+                    <option value="Krishnakant Upadhyay">
+                    <option value="Krishnappa Gowtham">
+                    <option value="Krunal Pandya">
+                    <option value="Kuldeep Yadav">
+                    <option value="Kulwant Khejroliya">
+                    <option value="Kumar Sangakkara">
+                    <option value="Kusal Perera">
+                    <option value="Kyle Abbott">
+                    <option value="Kyle Jamieson">
+                    <option value="Lakshmipathy Balaji">
+                    <option value="Lalit Yadav">
+                    <option value="Lasith Malinga">
+                    <option value="Laxmi Ratan Shukla">
+                    <option value="Lee Carseldine">
+                    <option value="Lelia N. Morris">
+                    <option value="Lendl Simmons ">
+                    <option value="Liam Livingstone">
+                    <option value="Liam Plunkett">
+                    <option value="Lockie Ferguson">
+                    <option value="Love Ablish">
+                    <option value="Luke Pomersbach">
+                    <option value="Luke Ronchi">
+                    <option value="Luke Wright">
+                    <option value="Lukman Meriwala">
+                    <option value="Lungi Ngidi">
+                    <option value="Mahela Jayawardene">
+                    <option value="Mahendra singh dhoni">
+                    <option value="Mahesh Rawat ">
+                    <option value="Mahipal Lomror">
+                    <option value="Makhaya Ntini">
+                    <option value="Man Mohan Sharma">
+                    <option value="Manan Vohra">
+                    <option value="Mandeep Singh">
+                    <option value="Manish Krishnanand Pandey">
+                    <option value="Manoj Mansinh Parmar">
+                    <option value="Manoj Tiwary">
+                    <option value="Manpreet Gony">
+                    <option value="Manpreet Juneja">
+                    <option value="Manvinder Bisla">
+                    <option value="Marchant de Lange">
+                    <option value="Marco Jansen">
+                    <option value="Marcus Stoinis">
+                    <option value="Mark Boucher">
+                    <option value="Mark Wood">
+                    <option value="Marlon Samuels">
+                    <option value="Martin Guptill">
+                    <option value="Mashrafe Mortaza">
+                    <option value="Matt Henry">
+                    <option value="Matthew Hayden">
+                    <option value="Matthew Wade ">
+                    <option value="Mayank Agarwal">
+                    <option value="Mayank Markande">
+                    <option value="Michael Hussey">
+                    <option value="Michael John Clarke">
+                    <option value="Michael Klinger">
+                    <option value="Michael Lumb">
+                    <option value="Michael Neser">
+                    <option value="Misbah-ul-Haq">
+                    <option value="Mitchell Johnson">
+                    <option value="Mitchell Marsh">
+                    <option value="Mitchell McClenaghan">
+                    <option value="Mitchell Santner">
+                    <option value="Mitchell Starc">
+                    <option value="Mithun Manhas">
+                    <option value="Moeen Ali">
+                    <option value="Mohammad Ashraful">
+                    <option value="Mohammad Asif">
+                    <option value="Mohammad Hafeez">
+                    <option value="Mohammad Kaif">
+                    <option value="Mohammad Nabi">
+                    <option value="Mohammed Shami">
+                    <option value="Mohammed Siraj">
+                    <option value="Mohnish Mishra">
+                    <option value="Moises Henriques">
+                    <option value="Monu Kumar">
+                    <option value="Morne Morkel">
+                    <option value="Morn� Nico van Wyk">
+                    <option value="Mujeeb Ur Rahman">
+                    <option value="Murali Kartik">
+                    <option value="Murali Vijay">
+                    <option value="Murugan Ashwin">
+                    <option value="Musavir Asmat Khote ">
+                    <option value="Mustafizur Rahman">
+                    <option value="Muttiah Muralitharan">
+                    <option value="Naman Ojha ">
+                    <option value="Narayan Jagadeesan">
+                    <option value="Nathan Coulter-Nile">
+                    <option value="Nathan Ellis ">
+                    <option value="Nathan McCullum">
+                    <option value="Nathan Rimmington">
+                    <option value="Nathu Bharat Singh">
+                    <option value="Navdeep Saini">
+                    <option value="Nayan Doshi">
+                    <option value="Nic Maddinson">
+                    <option value="Nicholas Pooran">
+                    <option value="Nikhil Naik">
+                    <option value="Niraj Patel">
+                    <option value="Nitish Rana">
+                    <option value="Nuwan Kulasekara .">
+                    <option value="Nuwan Zoysa">
+                    <option value="Oshane Thomas">
+                    <option value="Owais Shah">
+                    <option value="Padmanabhan Prasanth">
+                    <option value="Paidikalva Vijaykumar">
+                    <option value="Palani Amarnath">
+                    <option value="Pankaj Singh">
+                    <option value="Paras Dogra">
+                    <option value="Pardeep Sahu">
+                    <option value="Parthiv Patel">
+                    <option value="Parvez Rasool">
+                    <option value="Parvinder Awana">
+                    <option value="Pat Cummins">
+                    <option value="Paul David Collingwood">
+                    <option value="Paul Valthaty">
+                    <option value="Pawan Negi">
+                    <option value="Pawan Suyal">
+                    <option value="Peter Handscomb">
+                    <option value="Pinal Rohitbhai Shah">
+                    <option value="Piyush Chawla">
+                    <option value="Prayas Ray Barman"></option>
+                    <option value="Prabhsimran Singh">
+                    <option value="Pradeep Sangwan">
+                    <option value="Pragyan Ojha">
+                    <option value="Prasanth Parameswaran">
+                    <option value="Prashant Chopra">
+                    <option value="Prasidh Krishna">
+                    <option value="Praveen Dubey">
+                    <option value="Praveen Kumar">
+                    <option value="Pravin Tambe">
+                    <option value="Prithvi Shaw">
+                    <option value="Priyam Garg">
+                    <option value="Produturi Akshath Reddy">
+                    <option value="Quinton de Kock">
+                    <option value="Rahil Akhil Ahmed Shaikh">
+                    <option value="Rahul Chahar">
+                    <option value="Rahul Dravid">
+                    <option value="Rahul Tewatia">
+                    <option value="Rahul Tripathi">
+                    <option value="Raiphi Gomez">
+                    <option value="Rajagopal Sathish">
+                    <option value="Rajat Patidar">
+                    <option value="Raju Bhatkal">
+                    <option value="Ramesh Powar">
+                    <option value="Ramnaresh Sarwan">
+                    <option value="Ranadeb Bose">
+                    <option value="Rashid Khan">
+                    <option value="Rasikh Salam">
+                    <option value="Ravi Bishnoi">
+                    <option value="Ravi Bopara">
+                    <option value="Ravi Rampaul">
+                    <option value="Ravichandran Ashwin">
+                    <option value="Ravindra Jadeja">
+                    <option value="Ray price">
+                    <option value="Reetinder Singh Sodhi">
+                    <option value="Richard Levi">
+                    <option value="Ricky Bhui">
+                    <option value="Ricky Ponting">
+                    <option value="Rilee Rossouw">
+                    <option value="Riley Meredith">
+                    <option value="Rinku Singh">
+                    <option value="Ripal Vinubhai Patel">
+                    <option value="Rishabh Pant">
+                    <option value="Rishi Dhawan">
+                    <option value="Riya Bhatia">
+                    <option value="Riyan Parag">
+                    <option value="Rob Quiney">
+                    <option value="Robin Peterson">
+                    <option value="Robin Uthappa">
+                    <option value="Roelof van der Merwe">
+                    <option value="Rohan Gavaskar">
+                    <option value="Rohan Raje">
+                    <option value="Rohit Sharma">
+                    <option value="Ronit More">
+                    <option value="Ross Taylor">
+                    <option value="Rudra Pratap Singh">
+                    <option value="Rusty Theron">
+                    <option value="Ruturaj Gaikwad">
+                    <option value="Ryan James Harris">
+                    <option value="Ryan McLaren">
+                    <option value="Ryan Ninan">
+                    <option value="Ryan ten Doeschate">
+                    <option value="S. Sreesanth">
+                    <option value="Sachin Baby">
+                    <option value="Sachin Tendulkar">
+                    <option value="Sachithra Senanayake">
+                    <option value="Salman Butt">
+                    <option value="Sam Agarwal">
+                    <option value="Sam Billings">
+                    <option value="Sam Curran">
+                    <option value="Samuel Badree">
+                    <option value="Sanath Jayasuriya">
+                    <option value="Sandeep Lamichhane">
+                    <option value="Sandeep Sharma">
+                    <option value="Sandeep Warrier">
+                    <option value="Sanjay Bangar">
+                    <option value="Sanju Samson">
+                    <option value="Sarabjit Ladda">
+                    <option value="Sarfaraz Khan">
+                    <option value="Sarvesh Kumar">
+                    <option value="Saurabh Tiwary">
+                    <option value="Scott Boland">
+                    <option value="Scott Kuggeleijn">
+                    <option value="Scott Styris">
+                    <option value="Sean Abbott">
+                    <option value="Shadab Jakati">
+                    <option value="Shahbaz Ahmed">
+                    <option value="Shahbaz Nadeem">
+                    <option value="Shahid Afridi">
+                    <option value="Shahrukh Khan">
+                    <option value="Shakib Al Hasan">
+                    <option value="Shalabh Srivastava">
+                    <option value="Shamba Joshi">
+                    <option value="Shane Harwood">
+                    <option value="Shane Warne">
+                    <option value="Shane Watson">
+                    <option value="Shardul Thakur">
+                    <option value="Shaun Marsh">
+                    <option value="Shaun Pollock">
+                    <option value="Shaun Tait">
+                    <option value="Sheldon Cottrell">
+                    <option value="Sherfane Rutherford">
+                    <option value="Shikhar Dhawan">
+                    <option value="Shimron Hetmyer ">
+                    <option value="Shivam Dube">
+                    <option value="Shivam Mavi">
+                    <option value="Shivam Sharma">
+                    <option value="Shivil Kaushik">
+                    <option value="Shivnarine Chanderpaul">
+                    <option value="Shoaib Ahmed">
+                    <option value="Shoaib Akhtar">
+                    <option value="Shoaib Malik">
+                    <option value="Shoaib Shaikh">
+                    <option value="Shreevats Goswami">
+                    <option value="Shreyas Gopal">
+                    <option value="Shreyas Iyer">
+                    <option value="Shrikant Mundhe">
+                    <option value="Shrikant Wagh">
+                    <option value="Shubman Gill">
+                    <option value="Siddarth Kaul">
+                    <option value="Siddharth Chitnis">
+                    <option value="Siddharth Kishorkumar Trivedi">
+                    <option value="Siddhesh Lad">
+                    <option value="Simon Katich">
+                    <option value="Sneh Rana">
+                    <option value="Sohail Tanvir">
+                    <option value="Soumya Sarkar">
+                    <option value="Sourav Ganguly">
+                    <option value="Sreenath Aravind">
+                    <option value="Sridharan Sriram">
+                    <option value="Srikar Bharat">
+                    <option value="Stephen Fleming">
+                    <option value="Steve Smith">
+                    <option value="Stuart Binny">
+                    <option value="Subramaniam Badrinath">
+                    <option value="Sudeep Tyagi">
+                    <option value="Sudhesan Midhun">
+                    <option value="Sumit Narwal">
+                    <option value="Sunil Narine">
+                    <option value="Sunny Gupta">
+                    <option value="Sunny Singh">
+                    <option value="Sunny Sohal">
+                    <option value="Suraj Randiv">
+                    <option value="Suresh Raina">
+                    <option value="Suryakumar Ashok Yadav">
+                    <option value="Swapnil Asnodkar">
+                    <option value="Swapnil Singh">
+                    <option value="Tabraiz Shamsi">
+                    <option value="Taduri Prakash Chandra Sudhindra ">
+                    <option value="Tanmay Srivastava">
+                    <option value="Taruwar Kohli">
+                    <option value="Tatenda Taibu">
+                    <option value="Tejas Baroka">
+                    <option value="Thalaivan Sargunam">
+                    <option value="Thangarasu Natarajan ">
+                    <option value="Thilan Thushara">
+                    <option value="Thisara Perera">
+                    <option value="Tillakaratne Dilshan">
+                    <option value="Tim David">
+                    <option value="Tim Paine">
+                    <option value="Tim Seifert">
+                    <option value="Tim Southee">
+                    <option value="Tirumalasetti Suman">
+                    <option value="Tom Banton">
+                    <option value="Tom Curran">
+                    <option value="Top stories">
+                    <option value="Travis Birt">
+                    <option value="Travis Head">
+                    <option value="Trent Boult">
+                    <option value="Tushar Deshpande">
+                    <option value="Tymal Mills">
+                    <option value="Tyron Henderson">
+                    <option value="Udit Birla">
+                    <option value="Umar Gul">
+                    <option value="Umesh Yadav">
+                    <option value="Umran Malik">
+                    <option value="Unmukt Chand">
+                    <option value="Upendra Kaul">
+                    <option value="Usman Khawaja">
+                    <option value="Vangipurapu Venkata Sai Laxman">
+                    <option value="Varun Aaron">
+                    <option value="Varun Chakravarthy">
+                    <option value="Venkatesh Iyer">
+                    <option value="Venugopal Rao">
+                    <option value="Vidyut Sivaramakrishnan">
+                    <option value="Vijay Shankar">
+                    <option value="Vijay Zol">
+                    <option value="Vijaykumar Yo Mahesh">
+                    <option value="Vikram Raj Vir Singh">
+                    <option value="Vikramjeet Singh Malik">
+                    <option value="Vikrant Yeligati">
+                    <option value="Vinay Kumar">
+                    <option value="Virat Kohli">
+                    <option value="Virat Singh">
+                    <option value="Virender Sehwag">
+                    <option value="Vishnu Vinod">
+                    <option value="Vishwanath Pratap Singh">
+                    <option value="Wanindu Hasaranga">
+                    <option value="Washington Sundar">
+                    <option value="Wasim Jaffer">
+                    <option value="Wayne Parnell ">
+                    <option value="Wilkin Mota">
+                    <option value="Wriddhiman Saha">
+                    <option value="Yamuna Nagar">
+                    <option value="Yarra Prithvi Raj">
+                    <option value="Yashasvi Jaiswal">
+                    <option value="Yashpal Singh">
+                    <option value="Yogesh Takawale">
+                    <option value="Younis Khan">
+                    <option value="Yusuf Abdulla">
+                    <option value="Yusuf Pathan">
+                    <option value="Yuvraj Singh">
+                    <option value="Yuzvendra Chahal">
+                    <option value="Zaheer Khan">
+                    <option value="sheldon jackson">
+
+                </datalist>
+
+                <br><br><br>
+
+          
+            <input class="button" type="submit" value="See Statistics">
+        
+        </form>
+
+    </div>
+
+    </body>
+
+</html>

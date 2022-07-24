@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<head>
+
+    <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+
+    <title>{{team_name}}</title>
+
+</head>
+
+<style>
+
+
+li{
+    display: block;
+}
+
+.win p{
+    overflow:hidden;
+}
+
+body {
+    text-align: center;
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: aliceblue;
+    font-size: bolder;
+    }
+
+</style>
+
+
+<body>
+  <h1>Team info {{team_name}}</h1>
+
+  {% for data in info %}
+
+  <h2> {{data}} </h2>
+
+  {% endfor %}
+
+  <h1>Trophy</h1>
+
+  {% for y in year %}
+
+    <div class="win">
+    
+        <p>{{y}}</p>
+    </div>
+
+    {% endfor %}
+
+    <h1><a href="team_stats">See Team Stats</a></h1>
+
+  <h1>Team Squad</h1>
+
+  {% for name in player_list %}
+
+  <a href="player/{{name}}"><li>{{name}}</li></a>
+
+  {% endfor %}
+
+</body>

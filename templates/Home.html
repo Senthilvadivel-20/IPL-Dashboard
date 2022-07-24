@@ -1,0 +1,95 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'ipl/css/Home.css'%}">
+    <link rel="shortcut icon" href="https://www.iplt20.com/assets/images/ipl-logo-new-old.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/09e39528d8.js" crossorigin="anonymous"></script>
+
+    <title>Choose Feature</title>
+
+</head>
+
+
+<body>
+
+    <!-- -------------------------Nav Start---------------------------------- -->
+
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+    <div class="wrapper">
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a target="_blank" href="https://senthilvadivel-20.github.io/Portfolio/">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Feedback</a></li>
+
+        <li><p> Developed By Senthil </p></li>
+        
+        <div class="social_media">
+            <a target="_blank" href="https://github.com/Senthilvadivel-20" class="fa fa-github"></a>
+            <a target="_blank" href="https://www.linkedin.com/in/senthilsubramaniyam20/" class="fa fa-linkedin"></a>
+            <a target="_blank" href="https://twitter.com/the_senthil_" class="fa fa-twitter"></a>
+            <a target="_blank" href="https://www.instagram.com/the_senthil_/" class="fa fa-instagram"></a>
+        </div>
+
+    </ul>
+</div>
+    
+    <!-- ----------------------------Nav End----------------------------- -->
+     
+  
+
+
+    <div class="content">
+
+        
+
+    <div class="wrapper_option">
+        <div class="link_wrapper_option">
+    
+            <h1>IPL DASHBOARD</h1>
+   
+            <button> <a href="{% url 'player_home' %}"> See player details </a> </button>
+           
+            <button> <a href="{% url 'Comparing_player_home' %}"> See Comparing Players </a> </button>
+            
+            <br><br>
+
+            <button><a href="enter_team">Search Teams </a></button>
+            
+            <button><a href="h2h_home">Head to Head</a></button>
+
+            <br><br>
+
+            <button><a href="stats_overall_highscore">Batsman High Score</a></button>
+           
+            <button><a href="stats_overall_bowler_wk">Bowler Wicket</a></button>
+
+            <br><br>
+
+            <button><a href="score_prediction_home">Score prediction</a></button>            
+
+        <div class="icon_option">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z"/>
+            </svg> -->
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+</body>
+
+
+
+

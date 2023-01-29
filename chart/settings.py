@@ -1,6 +1,9 @@
 
 from pathlib import Path
 import os
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -58,6 +61,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chart.wsgi.application'
+# WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database

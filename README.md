@@ -17,9 +17,9 @@ Images:
 Player Stats Home page:
 
 
-[!Player stats Home] (./src/player_stats_home.png)
+![Player stats Home] (./src/player_stats_home.png)
 
 
 Chart view:
 
-[! Chart view] (./src/run_page.png)
+![Chart view] (./src/run_page.png)

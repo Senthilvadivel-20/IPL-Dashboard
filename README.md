@@ -11,3 +11,15 @@
 **Comprehensiveness** -  It offers features like player/team details, comparisons, head-to-head data, rankings, and score prediction.
 
 **Technology Stack** - Built with Python (Django framework), HTML, CSS, JavaScript libraries (pandas, numpy, sklearn) and data stored in a CSV file. Visualizations are made with JavaScript.
+
+Images:
+
+Player Stats Home page:
+
+
+[!Player stats Home] (./src/player_stats_home.png)
+
+
+Chart view:
+
+[! Chart view] (./src/run_page.png)
